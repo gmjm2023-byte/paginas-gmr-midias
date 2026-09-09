@@ -20,9 +20,9 @@ clients.json
 
 ## Publicação
 
-As páginas são servidas pelo GitHub Pages:
+As páginas são publicadas pelo fluxo integrado do repositório e servidas no domínio:
 
-`https://gmjm2023-byte.github.io/paginas-gmr-midias/<slug>/`
+`https://pages.gmrmidias.com/<slug>/`
 
 Os slugs existentes não devem ser renomeados sem criar redirecionamento, pois
 podem estar em uso por clientes.

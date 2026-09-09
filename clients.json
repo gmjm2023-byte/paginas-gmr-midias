@@ -1,9 +1,10 @@
 {
   "project": "PÁGINAS GMR MÍDIAS",
-  "baseUrl": "https://gmjm2023-byte.github.io/paginas-gmr-midias/",
+  "baseUrl": "https://pages.gmrmidias.com/",
   "clients": [
     "021premia",
     "ajpremios",
+    "ametistapremios",
     "baianopremiacoes",
     "bigbait",
     "cardumestore",
@@ -27,6 +28,7 @@
     "paraibaonline",
     "rotuloprime",
     "saopaulopremiacoes",
+    "sortepix",
     "sotralhaboa",
     "superfacas"
   ],
