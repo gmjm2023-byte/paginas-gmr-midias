@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f9fb">
+  <meta name="description" content="Ametista Prêmios — acompanhe a escolha dos números e o sorteio em tempo real. Sua chance de ganhar uma Titan 150.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ametista Prêmios | Você sonha e nós realizamos">
+  <meta property="og:description" content="Apenas 1.000 números. Entre no grupo exclusivo e acompanhe tudo em tempo real.">
+  <meta property="og:image" content="assets/titan-150.webp">
+  <title>Ametista Prêmios | Você sonha e nós realizamos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0a0d10;--muted:#5f6872;--paper:#f7f9fb;--white:#fff;
+      --blue:#35bdf5;--blue-dark:#087fae;--line:#dce3e8;--soft:#edf8fd;
+      --font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;
+      --radius:24px;--shadow:0 24px 80px rgba(12,30,42,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img,video{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-dark)}
+    .eyebrow::before{content:'';width:28px;height:1px;background:currentColor}
+    .section-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,4.25rem);line-height:.98;letter-spacing:-.045em;margin:16px 0 20px;max-width:880px}
+    .section-copy{color:var(--muted);font-size:clamp(1rem,2vw,1.15rem);max-width:650px;margin:0}
+    .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border:1px solid transparent;border-radius:999px;font-weight:700;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-dark{background:var(--ink);color:white;box-shadow:0 10px 30px rgba(10,13,16,.2)}
+    .btn-light{background:var(--white);border-color:var(--line);color:var(--ink)}
+    .btn-blue{background:var(--blue);color:#042634;box-shadow:0 10px 28px rgba(53,189,245,.3)}
+    .arrow{font-size:1.2em;transition:transform .2s ease}.btn:hover .arrow{transform:translateX(3px)}
+
+    .site-header{position:absolute;inset:0 0 auto;z-index:20;padding:20px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;letter-spacing:-.03em}
+    .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+    .brand span{color:white}.brand em{font-style:normal;color:var(--blue)}
+    .nav-actions{display:flex;gap:10px}.nav .btn{min-height:44px;padding:10px 18px;font-size:.9rem}
+
+    .hero{min-height:800px;display:grid;align-items:end;position:relative;overflow:hidden;background:#0a0d10;color:white}
+    .hero-media{position:absolute;inset:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 63%;filter:saturate(.8) contrast(1.05)}
+    .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,10,.94) 0%,rgba(5,8,10,.76) 43%,rgba(5,8,10,.1) 74%),linear-gradient(0deg,rgba(5,8,10,.84),transparent 55%)}
+    .hero-content{position:relative;z-index:2;padding:170px 0 82px;max-width:690px}
+    .hero .eyebrow{color:#8edcff}
+    .hero h1{font-family:var(--font-display);font-size:clamp(3.5rem,9vw,7.8rem);line-height:.82;letter-spacing:-.065em;margin:22px 0 28px;text-wrap:balance}
+    .hero h1 span{display:block;color:var(--blue);font-size:.39em;line-height:1.1;letter-spacing:-.035em;margin-top:22px}
+    .hero-lead{font-size:clamp(1.05rem,2vw,1.25rem);color:rgba(255,255,255,.78);max-width:620px;margin:0 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{margin-top:28px;display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.64);font-size:.9rem}
+    .hero-note strong{font-family:var(--font-display);font-size:1.7rem;color:white}
+    .hero-note i{width:1px;height:36px;background:rgba(255,255,255,.25)}
+
+    .ticker{background:var(--blue);overflow:hidden;padding:14px 0;color:#05222e;font-family:var(--font-display);font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .ticker-track{width:max-content;display:flex;gap:36px;animation:ticker 22s linear infinite}
+    .ticker-track span{display:flex;align-items:center;gap:36px}.ticker-track span::after{content:'◆';font-size:.55em}
+
+    .intro{padding:110px 0 80px}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+    .number-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+    .number-card strong{display:block;font-family:var(--font-display);font-size:clamp(4rem,10vw,8rem);line-height:.8;letter-spacing:-.08em}
+    .number-card span{display:block;margin-top:16px;color:var(--muted)}
+    .number-card .progress{height:7px;border-radius:99px;background:#e9eef1;margin-top:28px;overflow:hidden}
+    .number-card .progress::after{content:'';display:block;width:68%;height:100%;background:linear-gradient(90deg,var(--blue),#89ddff);border-radius:inherit}
+    .number-card small{display:block;margin-top:12px;color:var(--blue-dark);font-weight:700;text-transform:uppercase;letter-spacing:.09em}
+
+    .steps-section{padding:90px 0;background:white;border-block:1px solid var(--line)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px;counter-reset:step}
+    .step{counter-increment:step;position:relative;padding:32px;border-radius:20px;background:var(--paper);border:1px solid var(--line)}
+    .step::before{content:'0' counter(step);font-family:var(--font-display);font-weight:800;color:var(--blue);font-size:2rem}
+    .step h3{font-family:var(--font-display);font-size:1.25rem;margin:44px 0 10px}.step p{color:var(--muted);margin:0}
+
+    .prize{padding:110px 0}
+    .prize-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:stretch;margin-top:52px}
+    .prize-main{position:relative;min-height:650px;border-radius:var(--radius);overflow:hidden;background:#111}
+    .prize-main img{width:100%;height:100%;object-fit:cover}
+    .prize-tag{position:absolute;left:22px;bottom:22px;padding:12px 17px;border-radius:99px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);font-weight:700}
+    .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .video-card{position:relative;overflow:hidden;border-radius:var(--radius);background:#111;min-height:650px}
+    .video-card video{width:100%;height:100%;object-fit:cover}
+    .video-card.wide{grid-column:1/-1;min-height:400px;display:none}
+
+    .benefits{padding:110px 0;background:var(--ink);color:white;overflow:hidden;position:relative}
+    .benefits::before{content:'◆';position:absolute;right:-8vw;top:-19vw;font-size:42vw;color:rgba(53,189,245,.045);line-height:1}
+    .benefits .section-copy{color:rgba(255,255,255,.62)}
+    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.15);margin-top:60px;border:1px solid rgba(255,255,255,.15);position:relative}
+    .benefit{background:var(--ink);padding:42px 34px;min-height:270px}
+    .benefit-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#062431;font-size:1.3rem}
+    .benefit h3{font-family:var(--font-display);font-size:1.35rem;margin:50px 0 10px}.benefit p{color:rgba(255,255,255,.58);margin:0}
+
+    .rules{padding:100px 0}
+    .rules-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+    .rules-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
+    .rules-list li{display:flex;align-items:center;gap:12px;background:white;border:1px solid var(--line);padding:15px 17px;border-radius:14px;font-weight:600}
+    .rules-list li::before{content:'×';width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#fff0f0;color:#bd3030;font-weight:800;flex:0 0 auto}
+    .rules-note{color:var(--muted);font-size:.9rem;margin-top:18px}
+
+    .final-cta{padding:0 0 110px}
+    .cta-card{border-radius:32px;background:var(--blue);padding:70px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;overflow:hidden;position:relative}
+    .cta-card::after{content:'◆';position:absolute;right:20%;top:-130%;font-size:430px;color:rgba(255,255,255,.17)}
+    .cta-card h2{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,4.5rem);line-height:.95;letter-spacing:-.05em;margin:0 0 16px;position:relative;z-index:1}
+    .cta-card p{max-width:640px;margin:0;color:#0c4b63;position:relative;z-index:1}
+    .cta-card .btn{position:relative;z-index:1;white-space:nowrap}
+
+    .footer{padding:36px 0;border-top:1px solid var(--line)}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:28px}
+    .socials{display:flex;gap:12px;flex-wrap:wrap}.socials a{color:var(--muted);font-weight:700}.socials a:hover{color:var(--blue-dark)}
+    .floating-cta{position:fixed;right:18px;bottom:18px;z-index:30;display:none}
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @keyframes ticker{to{transform:translateX(-50%)}}
+
+    @media(max-width:900px){
+      .intro-grid,.prize-grid,.rules-grid{grid-template-columns:1fr;gap:44px}
+      .steps,.benefit-grid{grid-template-columns:1fr}
+      .prize-main,.video-card{min-height:560px}
+      .cta-card{grid-template-columns:1fr;padding:48px}
+    }
+    @media(max-width:640px){
+      .container{width:min(100% - 28px,1160px)}
+      .site-header{padding:14px 0}.brand span{display:none}.brand img{width:42px;height:42px}
+      .nav-actions .btn-light{display:none}.nav .btn{font-size:.8rem;padding:9px 14px}
+      .hero{min-height:760px}.hero-media::after{background:linear-gradient(0deg,rgba(5,8,10,.95) 0%,rgba(5,8,10,.58) 65%,rgba(5,8,10,.18) 100%)}
+      .hero-content{padding:130px 0 58px}.hero h1{font-size:clamp(3.45rem,18vw,5.6rem)}
+      .hero-actions{display:grid}.hero-actions .btn{width:100%}
+      .intro,.prize,.benefits,.rules{padding:76px 0}.section-title{font-size:clamp(2.2rem,12vw,3.25rem)}
+      .number-card{padding:26px}.steps{margin-top:36px}.step{padding:26px}.step h3{margin-top:28px}
+      .video-grid{grid-template-columns:1fr;gap:14px}.prize-main{min-height:500px}.video-card{min-height:560px;border-radius:18px}
+      .rules-list{grid-template-columns:1fr}.cta-card{padding:38px 26px;border-radius:24px}
+      .footer-grid{align-items:flex-start;flex-direction:column}.floating-cta{display:none}.floating-cta.show{display:flex}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ametista Prêmios — início">
+        <img src="assets/logo.webp" alt="Logo Ametista Prêmios">
+        <span>Ametista <em>Prêmios</em></span>
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-light" href="https://w.app/x4yejq" target="_blank" rel="noopener noreferrer">Falar com atendente</a>
+        <a class="btn btn-blue" href="https://chat.whatsapp.com/GpTwKhoeQXF9u1VYkbT9w3" target="_blank" rel="noopener noreferrer">Entrar no grupo <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-media"><img src="assets/titan-150.webp" alt="Honda Titan 150, prêmio da Ametista Prêmios"></div>
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Sorteio exclusivo • 1.000 números</span>
+          <h1>Ametista Prêmios <span>Você sonha e nós realizamos.</span></h1>
+          <p class="hero-lead">Sua chance de ganhar uma <strong>Titan 150</strong> está aqui. Acompanhe a saída dos números e o sorteio em tempo real, com tudo acontecendo dentro do grupo.</p>
+          <div class="hero-actions">
+            <a class="btn btn-blue" href="#como-funciona">Saiba mais <span class="arrow">↓</span></a>
+            <a class="btn btn-light" href="https://chat.whatsapp.com/GpTwKhoeQXF9u1VYkbT9w3" target="_blank" rel="noopener noreferrer">Quero participar <span class="arrow">→</span></a>
+          </div>
+          <div class="hero-note"><strong>1.000</strong><i></i><span>números apenas.<br>Não deixe para depois.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track">
+      <span>Titan 150</span><span>Acompanhe em tempo real</span><span>Grupo exclusivo</span><span>Apenas 1.000 números</span>
+      <span>Titan 150</span><span>Acompanhe em tempo real</span><span>Grupo exclusivo</span><span>Apenas 1.000 números</span>
+    </div></div>
+
+    <section class="intro" id="como-funciona">
+      <div class="container intro-grid">
+        <div class="reveal">
+          <span class="eyebrow">Uma oportunidade única</span>
+          <h2 class="section-title">Poucos números. Um sonho sobre duas rodas.</h2>
+          <p class="section-copy">Clique em “Entrar no Grupo”. Você será direcionado ao WhatsApp, onde acontecerá o sorteio e ficará disponível a tabela para escolher os seus números.</p>
+        </div>
+        <div class="number-card reveal">
+          <strong>1.000</strong>
+          <span>números disponíveis para a ação da Titan 150.</span>
+          <div class="progress" aria-hidden="true"></div>
+          <small>Entre no grupo e consulte a disponibilidade</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <span class="eyebrow reveal">Como participar</span>
+        <h2 class="section-title reveal">Do clique à torcida, tudo simples.</h2>
+        <div class="steps">
+          <article class="step reveal"><h3>Entre no grupo</h3><p>Acesse o grupo exclusivo da Ametista Prêmios pelo WhatsApp.</p></article>
+          <article class="step reveal"><h3>Escolha os números</h3><p>Consulte a tabela disponível e acompanhe a saída de cada número em tempo real.</p></article>
+          <article class="step reveal"><h3>Acompanhe o sorteio</h3><p>Fique por dentro das atualizações e acompanhe o momento do sorteio no grupo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prize" id="premio">
+      <div class="container">
+        <span class="eyebrow reveal">Conheça o prêmio</span>
+        <h2 class="section-title reveal">A sua próxima Titan 150?</h2>
+        <p class="section-copy reveal">Veja de perto a moto que pode transformar o seu próximo caminho.</p>
+        <div class="prize-grid">
+          <figure class="prize-main reveal">
+            <img src="assets/titan-150.webp" alt="Vista completa da Honda Titan 150">
+            <figcaption class="prize-tag">Honda Titan 150</figcaption>
+          </figure>
+          <div class="video-grid">
+            <div class="video-card reveal"><video controls playsinline preload="metadata" poster="assets/titan-detalhe-1-poster.webp"><source src="assets/titan-detalhe-1.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video></div>
+            <div class="video-card reveal"><video controls playsinline preload="metadata" poster="assets/titan-detalhe-2-poster.webp"><source src="assets/titan-detalhe-2.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <span class="eyebrow reveal">Por que participar</span>
+        <h2 class="section-title reveal">Clareza em cada etapa.</h2>
+        <p class="section-copy reveal">A comunidade acompanha as principais informações diretamente no grupo.</p>
+        <div class="benefit-grid">
+          <article class="benefit reveal"><span class="benefit-icon">↻</span><h3>Atualização em tempo real</h3><p>Acompanhe a saída dos números e as novidades da ação.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon">◎</span><h3>Sorteio acompanhado</h3><p>Fique conectado ao grupo para acompanhar o sorteio.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon">◇</span><h3>Apenas 1.000 números</h3><p>Uma ação limitada. Entre no grupo e confira a tabela disponível.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules" id="regras">
+      <div class="container rules-grid">
+        <div class="reveal">
+          <span class="eyebrow">Regras da comunidade</span>
+          <h2 class="section-title">Respeito deixa tudo melhor.</h2>
+          <p class="section-copy">Para manter o grupo organizado, seguro e focado na ação, alguns conteúdos e comportamentos não são permitidos.</p>
+        </div>
+        <div class="reveal">
+          <ul class="rules-list">
+            <li>Concorrentes</li><li>Política</li><li>Religião</li><li>Material erótico</li><li>Vídeos ou imagens violentas</li><li>Homofobia</li><li>Discussões desnecessárias</li>
+          </ul>
+          <p class="rules-note">Ao entrar no grupo, você concorda em respeitar as orientações da comunidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div><h2>Corre. Essa pode ser a sua chance.</h2><p>Entre agora no grupo exclusivo, confira a tabela e escolha os seus números para concorrer à Titan 150.</p></div>
+          <a class="btn btn-dark" href="https://chat.whatsapp.com/GpTwKhoeQXF9u1VYkbT9w3" target="_blank" rel="noopener noreferrer">Participar agora <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <a class="brand" href="#inicio"><img src="assets/logo.webp" alt="Ametista Prêmios"><span style="color:var(--ink)">Ametista <em>Prêmios</em></span></a>
+      <div class="socials">
+        <a href="https://www.instagram.com/ametista_premios?igsi=MTBzM3gwMHBqbzB1eg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/share/17pCifJqSq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://w.app/x4yejq" target="_blank" rel="noopener noreferrer">Atendimento</a>
+      </div>
+      <small>© 2026 Ametista Prêmios.</small>
+    </div>
+  </footer>
+
+  <a class="btn btn-blue floating-cta" href="https://chat.whatsapp.com/GpTwKhoeQXF9u1VYkbT9w3" target="_blank" rel="noopener noreferrer" aria-label="Entrar no grupo da Ametista Prêmios">Entrar no grupo <span class="arrow">→</span></a>
+
+  <script>
+    (function(){
+      const floatingCta=document.querySelector('.floating-cta');
+      const updateFloatingCta=()=>floatingCta&&floatingCta.classList.toggle('show',window.scrollY>650);
+      updateFloatingCta();
+      window.addEventListener('scroll',updateFloatingCta,{passive:true});
+      const items=document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){items.forEach(el=>el.classList.add('visible'));return}
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});
+      items.forEach((el,index)=>{el.style.transitionDelay=(index%3)*70+'ms';observer.observe(el)});
+    })();
+  </script>
+</body>
+</html>
+
