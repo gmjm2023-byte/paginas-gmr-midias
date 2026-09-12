@@ -16,6 +16,7 @@
     "cphpesca",
     "crissamtips",
     "diegosouza",
+    "fourconnectimports",
     "helberpremiacoes",
     "impactoplay",
     "irmaosdapesca",
@@ -32,5 +33,7 @@
     "sotralhaboa",
     "superfacas"
   ],
-  "internal": ["proposta"]
+  "internal": [
+    "proposta"
+  ]
 }
