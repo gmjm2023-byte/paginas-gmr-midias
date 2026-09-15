@@ -1,0 +1,294 @@
+/* Final layout pass: rhythm, hierarchy, proportion and touch comfort. */
+:root {
+  --section-space: clamp(62px, 5vw, 76px);
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section-heading {
+  display: block;
+  margin-bottom: clamp(30px, 3vw, 40px);
+}
+
+.section-heading > span {
+  display: block;
+  padding-top: 0;
+  margin-bottom: 16px;
+}
+
+.section-heading > div {
+  text-align: center;
+}
+
+.section-heading > div > p {
+  margin-bottom: 8px;
+}
+
+.section-heading h2,
+.draw-copy h2 {
+  max-width: 760px;
+  font-size: clamp(46px, 4.6vw, 70px);
+  line-height: .94;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.hero-copy h1 {
+  max-width: 520px;
+  font-size: clamp(64px, 6vw, 96px);
+  line-height: .86;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.hero-copy h1 em {
+  white-space: nowrap;
+}
+
+.prize-card h3,
+.steps h3 {
+  letter-spacing: -.025em;
+}
+
+.rank-card strong {
+  font-size: clamp(46px, 4.8vw, 68px);
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.rank-card {
+  min-height: 220px;
+}
+
+.prize-grid,
+.podium {
+  gap: 14px;
+}
+
+#canais {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+#canais .channels {
+  gap: 22px;
+  align-items: stretch;
+}
+
+.channel-card {
+  min-width: 0;
+}
+
+.channel-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.channel-card footer {
+  min-height: 92px;
+  padding: 20px 24px;
+  gap: 24px;
+}
+
+.channel-card footer span {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.share-button {
+  min-height: 46px;
+}
+
+.footer-grid a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-space: clamp(54px, 9vw, 66px);
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading > span {
+    padding-top: 0;
+  }
+
+  .section-heading h2,
+  .draw-copy h2 {
+    max-width: 620px;
+    font-size: clamp(44px, 9vw, 60px);
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(62px, 15vw, 88px);
+  }
+
+  .rank-card strong {
+    font-size: clamp(46px, 10vw, 58px);
+  }
+
+  .podium {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #canais .channels {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .floating-cta {
+    left: auto;
+    right: 14px;
+    width: auto;
+    max-width: calc(100% - 28px);
+    min-height: 52px;
+    padding-inline: 20px;
+    font-size: 10px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, .62);
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --section-space: 48px;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-heading h2,
+  .draw-copy h2 {
+    font-size: clamp(40px, 11vw, 52px);
+    line-height: .96;
+  }
+
+  .channel-card footer {
+    min-height: 84px;
+    padding: 18px 20px;
+  }
+
+  .channel-card footer span {
+    font-size: 15px;
+  }
+
+  .hero-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-block: 22px;
+  }
+
+  .hero-facts div {
+    min-width: 0;
+    padding: 14px 7px;
+  }
+
+  .hero-facts div + div {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    padding-left: 9px;
+  }
+
+  .hero-facts small,
+  .hero-facts strong {
+    white-space: nowrap;
+  }
+
+  .hero-facts small {
+    margin-bottom: 6px;
+    font-size: 6.5px;
+    letter-spacing: .08em;
+  }
+
+  .hero-facts strong {
+    font-size: 10px;
+  }
+
+  .prize-grid {
+    gap: 10px;
+  }
+
+  .prize-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .prize-card::before {
+    display: none;
+  }
+
+  .prize-main {
+    min-height: 260px;
+  }
+
+  .prize-extra {
+    min-height: 225px;
+  }
+
+  .prize-ranking {
+    min-height: 205px;
+  }
+
+  .card-index {
+    top: 20px;
+    left: 22px;
+  }
+
+  .giant-number {
+    margin-bottom: 12px;
+    font-size: 82px;
+  }
+
+  .prize-card h3 {
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .podium {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .rank-card {
+    min-height: 150px;
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+
+  .rank-card span {
+    font-size: 7px;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .rank-card strong {
+    font-size: clamp(32px, 10vw, 40px);
+    white-space: nowrap;
+  }
+
+  .rank-card small {
+    font-size: 10px;
+  }
+
+  .ranking-note {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .floating-cta {
+    min-height: 48px;
+    padding-inline: 15px;
+    font-size: 9px;
+  }
+}
+
