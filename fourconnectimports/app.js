@@ -1,6 +1,15 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const marquee = document.querySelector(".marquee-track");
+const heroCover = document.querySelector(".hero-cover");
+const mobileCta = document.querySelector(".mobile-cta");
+
+if (heroCover && mobileCta) {
+  const mobileCtaObserver = new IntersectionObserver(([entry]) => {
+    mobileCta.hidden = entry.isIntersecting;
+  }, { threshold: .12 });
+  mobileCtaObserver.observe(heroCover);
+}
 
 if (window.gsap) {
   const mm = gsap.matchMedia();
