@@ -41,12 +41,12 @@ if (window.gsap) {
   });
 
   mm.add("(pointer: fine) and (prefers-reduced-motion: no-preference)", () => {
-    const visual = document.querySelector(".product-stage");
+    const visual = document.querySelector(".hero-cover > img");
     if (!visual) return;
     const onMove = (event) => {
-      const x = (event.clientX / window.innerWidth - .5) * 8;
-      const y = (event.clientY / window.innerHeight - .5) * 8;
-      gsap.to(visual, { x, y, scale: 1.025, duration: 1.1, ease: "power2.out", overwrite: "auto" });
+      const x = (event.clientX / window.innerWidth - .5) * 10;
+      const y = (event.clientY / window.innerHeight - .5) * 6;
+      gsap.to(visual, { x, y, duration: 1.1, ease: "power2.out", overwrite: "auto" });
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
