@@ -1,0 +1,10 @@
+.share-button {
+  min-height: 46px;
+}
+
+.footer-grid a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
