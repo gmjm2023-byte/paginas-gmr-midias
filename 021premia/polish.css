@@ -139,6 +139,10 @@
     font-size: clamp(46px, 10vw, 58px);
   }
 
+  .podium {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   #canais .channels {
     max-width: 680px;
     margin-inline: auto;
@@ -157,8 +161,12 @@
 }
 
 @media (max-width: 560px) {
+  :root {
+    --section-space: 48px;
+  }
+
   .section-heading {
-    margin-bottom: 32px;
+    margin-bottom: 26px;
   }
 
   .section-heading h2,
@@ -174,6 +182,113 @@
 
   .channel-card footer span {
     font-size: 15px;
+  }
+
+  .hero-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-block: 22px;
+  }
+
+  .hero-facts div {
+    min-width: 0;
+    padding: 14px 7px;
+  }
+
+  .hero-facts div + div {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    padding-left: 9px;
+  }
+
+  .hero-facts small,
+  .hero-facts strong {
+    white-space: nowrap;
+  }
+
+  .hero-facts small {
+    margin-bottom: 6px;
+    font-size: 6.5px;
+    letter-spacing: .08em;
+  }
+
+  .hero-facts strong {
+    font-size: 10px;
+  }
+
+  .prize-grid {
+    gap: 10px;
+  }
+
+  .prize-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .prize-card::before {
+    display: none;
+  }
+
+  .prize-main {
+    min-height: 260px;
+  }
+
+  .prize-extra {
+    min-height: 225px;
+  }
+
+  .prize-ranking {
+    min-height: 205px;
+  }
+
+  .card-index {
+    top: 20px;
+    left: 22px;
+  }
+
+  .giant-number {
+    margin-bottom: 12px;
+    font-size: 82px;
+  }
+
+  .prize-card h3 {
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .podium {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .rank-card {
+    min-height: 150px;
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+
+  .rank-card span {
+    font-size: 7px;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .rank-card strong {
+    font-size: clamp(32px, 10vw, 40px);
+    white-space: nowrap;
+  }
+
+  .rank-card small {
+    font-size: 10px;
+  }
+
+  .ranking-note {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .floating-cta {
+    min-height: 48px;
+    padding-inline: 15px;
+    font-size: 9px;
   }
 }
 
