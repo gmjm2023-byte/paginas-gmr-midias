@@ -27,7 +27,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="CPH Pesca | Rifas de equipamentos de pesca">
   <meta property="og:description" content="Rifas a partir de R$ 1,50 e sorteios grátis exclusivos para membros do grupo.">
-  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:image" content="images/carretilhas-maruri.png">
   <title>CPH Pesca | Rifas e sorteios para pescadores</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +59,14 @@
     @media(max-width:820px){.hero{padding-top:26px}.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.logo{width:112px;height:112px;margin:0 auto 18px}.eyebrow{justify-content:center}h1{font-size:clamp(48px,15vw,72px);margin-inline:auto}.lead{margin-inline:auto}.benefits{justify-content:center}.btn{width:100%}.hero-art img{max-height:none}.gallery{grid-template-columns:1fr 1fr}.card:last-child{grid-column:1/-1}.card img{height:360px}}
     @media(max-width:540px){.wrap{width:min(100% - 24px,1120px)}.hero{min-height:auto}.strip-inner{grid-template-columns:1fr}.strip-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.07);padding:14px}.gallery{grid-template-columns:1fr}.card:last-child{grid-column:auto}.card img{height:auto}.prizes{padding:68px 0}.final{padding:52px 0}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card img{transition:none}}
+    .hero-art img{aspect-ratio:1/1;object-fit:cover;object-position:center bottom;max-height:600px}
+    .gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px;max-width:680px;margin-inline:auto}
+    .gallery .card{flex:0 0 100%;scroll-snap-align:start;min-width:0}
+    .gallery .card img{height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center bottom}
+    .gallery-controls{display:flex;justify-content:center;gap:10px;margin-top:18px}
+    .gallery-controls button{min-height:44px;padding:10px 16px;background:var(--surface);color:var(--white);border:1px solid var(--line);border-radius:7px;cursor:pointer;font:inherit}
+    .gallery-controls button:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){.gallery{scroll-behavior:auto}}
   </style>
 </head>
 <body>
@@ -79,7 +87,7 @@
           </a>
           <p class="micro">Você será direcionado ao grupo oficial no WhatsApp.</p>
         </div>
-        <div class="hero-art"><img src="images/hero.jpg" alt="Ação CPH Pesca com equipamentos de pesca e números a partir de R$ 1,50" width="1086" height="1448"></div>
+        <div class="hero-art"><img src="images/carretilhas-maruri.png" alt="Carretilhas Maruri com suas caixas e acessórios" width="1200" height="1600" fetchpriority="high"></div>
       </div>
     </section>
 
@@ -88,10 +96,9 @@
     <section class="prizes">
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Prêmios para pescadores</div><h2>Equipamentos que fazem a diferença</h2><p>Carretilhas, molinetes e outros itens de pesca podem aparecer nas ações divulgadas no grupo.</p></div>
-        <div class="gallery">
-          <article class="card"><img src="images/molinete.jpg" alt="Molinete de pesca sobre sua embalagem" loading="lazy" width="960" height="1280"><p>Molinetes</p></article>
-          <article class="card"><img src="images/carretilha-preta.jpg" alt="Carretilha preta de pesca sobre sua embalagem" loading="lazy" width="960" height="1280"><p>Carretilhas</p></article>
-          <article class="card"><img src="images/carretilhas-vermelhas.jpg" alt="Duas carretilhas vermelhas de pesca" loading="lazy" width="960" height="1280"><p>Equipamentos selecionados</p></article>
+        <div class="gallery" aria-label="Fotos dos equipamentos">
+          <article class="card"><img src="images/carretilhas-maruri.png" alt="Seleção de carretilhas Maruri com caixas e acessórios" loading="lazy" width="1200" height="1600"><p>Carretilhas Maruri</p></article>
+          <article class="card"><img src="images/carretilha-maruri-detalhe.png" alt="Carretilha Maruri preta com estojo, caixa e material da marca" loading="lazy" width="1200" height="1600"><p>Detalhes e acessórios</p></article>
         </div>
       </div>
     </section>
@@ -99,5 +106,30 @@
     <section class="final"><div class="wrap final-inner"><h2>Seu próximo equipamento pode estar aqui</h2><p>Entre no grupo da CPH Pesca para acompanhar as próximas ações, consultar as condições e participar.</p><a class="btn" href="https://chat.whatsapp.com/G8L7y93enPY4RCaNWOJCl5?mode=gi_t" target="_blank" rel="noopener">Quero entrar no grupo</a></div></section>
   </main>
   <footer><div class="wrap"><p>Esta página tem caráter informativo e direciona para o grupo oficial da CPH Pesca. A participação em qualquer ação é voluntária e está sujeita ao regulamento, condições, disponibilidade e informações divulgadas pelos organizadores no grupo. Imagens meramente ilustrativas dos tipos de equipamentos utilizados nas ações.</p><p>CPH Pesca · <a href="https://instagram.com/cph_pesca" target="_blank" rel="noopener">@cph_pesca</a> · <a href="https://wa.me/5541988037056" target="_blank" rel="noopener">WhatsApp</a></p></div></footer>
+  <script>
+  (() => {
+    const gallery = document.querySelector('.gallery');
+    const controls = document.createElement('div');
+    controls.className = 'gallery-controls';
+    controls.innerHTML = '<button type="button" data-step="-1" aria-label="Foto anterior">Anterior</button><button type="button" data-pause>Pausar</button><button type="button" data-step="1" aria-label="Próxima foto">Próxima</button>';
+    gallery.after(controls);
+    let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pause = controls.querySelector('[data-pause]');
+    const label = () => { pause.textContent = paused ? 'Reproduzir' : 'Pausar'; };
+    label();
+    function move(step) {
+      const width = gallery.clientWidth + 16;
+      const current = Math.round(gallery.scrollLeft / width);
+      gallery.scrollTo({left: ((current + step + 2) % 2) * width});
+    }
+    controls.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {paused = true; label(); move(Number(button.dataset.step));}));
+    pause.addEventListener('click', () => {paused = !paused; label();});
+    gallery.addEventListener('pointerdown', () => {paused = true; label();});
+    setInterval(() => {
+      const rect = gallery.getBoundingClientRect();
+      if (!paused && !document.hidden && rect.top < innerHeight && rect.bottom > 0 && !gallery.matches(':hover') && !controls.contains(document.activeElement)) move(1);
+    }, 5000);
+  })();
+  </script>
 </body>
 </html>
